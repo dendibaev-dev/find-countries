@@ -1,0 +1,12 @@
+@font-face {
+  font-display: swap;
+  font-family: "DIN Round Pro";
+  src: url("/fonts/DINRoundPro.eot");
+  src: local("DINRoundPro"),
+    url("/fonts/DINRoundPro.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/DINRoundPro.woff2") format("woff2"),
+    url("/fonts/DINRoundPro.woff") format("woff"),
+    url("/fonts/DINRoundPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
