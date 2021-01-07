@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Search from "../components/Search";
 
-export default function Home() {
+export default function Home({ countries }) {
   return (
     <>
       <Head>
@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <main className="container main">
         <h1 className="title">Find Countries</h1>
-        <Search />
+        <Search countries={countries} />
       </main>
       <footer className="footer">
         <a href="https://dendibaev.uz" className="link" target="_blank">
@@ -26,4 +26,11 @@ export default function Home() {
       </footer>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const response = await fetch(`https://restcountries.eu/rest/v2/all`);
+  const countries = await response.json();
+
+  return { props: { countries } };
 }
