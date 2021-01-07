@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-gray);
+  height: 54px;
+  width: 100%;
+}
+
+.link {
+  color: var(--color-black);
+  margin: 32px;
+}

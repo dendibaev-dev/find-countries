@@ -1,6 +1,22 @@
-export default function Country(country) {
-  console.log(country);
-  return <img src={country[0].flag} width="40" />;
+import Head from "next/head";
+import Footer from "../../components/Footer";
+import cls from "../../styles/Country.module.css";
+
+export default function Country({ flag, name, capital, demonym }) {
+  return (
+    <>
+      <Head>
+        <title>{name}</title>
+      </Head>
+      <div className={`container ${cls.country}`}>
+        <h1 className={cls.name}>{name}</h1>
+        <img src={flag} className={cls.flag} />
+        <p>Capital: {capital}</p>
+        <p>Demonym: {demonym}</p>
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export async function getServerSideProps({ params }) {
@@ -9,5 +25,5 @@ export async function getServerSideProps({ params }) {
   );
   const country = await response.json();
 
-  return { props: { ...country } };
+  return { props: { ...country[0] } };
 }

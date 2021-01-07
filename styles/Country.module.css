@@ -1,0 +1,19 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.flag {
+  width: 70%;
+}

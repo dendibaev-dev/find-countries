@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import cls from "../styles/Search.module.css";
 import Results from "./Results";
 
 export default function Search({ countries }) {
@@ -13,7 +14,7 @@ export default function Search({ countries }) {
       setResults([]);
     }
 
-    if (value.length >= 4) {
+    if (value.length >= 3) {
       countries.map((country) => {
         if (country.name.toLowerCase().includes(value.toLowerCase())) {
           if (results.length === 0) {
@@ -31,17 +32,20 @@ export default function Search({ countries }) {
   };
 
   return (
-    <div className="search-wrapper">
-      <div className="search" is-active={results.length > 0 ? "active" : null}>
+    <div className={cls.wrapper}>
+      <div
+        className={cls.search}
+        is-active={results.length > 0 ? "active" : null}
+      >
         <input
-          className="input"
+          className={cls.input}
           value={searchQuery}
           onChange={(e) => search(e.target.value)}
           placeholder="Name of country"
         />
         <Image
           src="/images/icons/search.svg"
-          className="icon"
+          className={cls.icon}
           width="24"
           height="24"
           alt=""

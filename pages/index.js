@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Search from "../components/Search";
+import Footer from "../components/Footer";
 
 export default function Home({ countries }) {
   return (
@@ -12,18 +13,7 @@ export default function Home({ countries }) {
         <h1 className="title">Find Countries</h1>
         <Search countries={countries} />
       </main>
-      <footer className="footer">
-        <a href="https://dendibaev.uz" className="link" target="_blank">
-          Dendibaev.uz
-        </a>
-        <a
-          href="https://github.com/dendibaev-dev/countries"
-          className="link"
-          target="_blank"
-        >
-          Repository on Github
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }
