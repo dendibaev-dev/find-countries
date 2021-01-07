@@ -17,3 +17,26 @@
 .flag {
   width: 70%;
 }
+
+.languages,
+.domains {
+  display: flex;
+  align-items: center;
+}
+
+.lang,
+.domain {
+  color: var(--color-primary);
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.lang::after,
+.domain::after {
+  content: ",";
+}
+
+.lang:last-child::after,
+.domain:last-child::after {
+  content: "";
+}
